@@ -1,0 +1,12 @@
+---
+output: html
+title: my quarto demo
+author: Carl Boettigner
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+# library(usethis)
+# usethis::use_github_action("render-rmarkdown.yaml")
