@@ -1,8 +1,6 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
-on:
-  push:
-    paths: ['**.Rmd']
+on: push
 
 name: render-rmarkdown
 
@@ -25,7 +23,8 @@ jobs:
       
       - name: Render Rmarkdown files and Commit Results
         run: |
-          R -e 'rmarkdown::render("example-notebook.qmd",output_format="html_document")
+          R -e 'rmarkdown::render("example-notebook.qmd",output_format="html_document")'
+          R -e 'quarto::quarto_render("example-notebook.qmd")'
           
           # RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
           # Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f)' ${RMD_PATH[*]}
