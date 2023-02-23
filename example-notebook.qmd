@@ -3,6 +3,7 @@ title: "example-notebook.qmd"
 format: html
 author: Carl Boettiger
 editor: visual
+modified: 23 Feb 2023 by S. Zick
 ---
 
 ## Quarto
